@@ -1,7 +1,7 @@
 <?php
 
 const APP_TITLE = "For sale houses";
-const BASE_URL = "http://localhost";
+const BASE_URL = "http://localhost:8000";
 
 define("BASE_DIR", realpath(__DIR__ . "/../"));
 
