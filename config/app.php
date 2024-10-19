@@ -14,10 +14,10 @@ define("CURRENT_ROUTE", $tmp);
 global $routes;
 
 $routes = [
-    'get'=>"",
-    'post'=>"",
-    'put'=>"",
-    'delete'=>""
+    'get'=>[],
+    'post'=>[],
+    'put'=>[],
+    'delete'=>[]
 ];
 
 
