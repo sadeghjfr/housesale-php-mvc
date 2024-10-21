@@ -3,7 +3,7 @@
         'name' => 'vendor_name/housesale-php-mvc',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '7aebf1a79bc40cbc8774ee7b3a56fd23e51f542d',
+        'reference' => '3e04f9518e0884e0d87c8c706726d9a974c7a82a',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'vendor_name/housesale-php-mvc' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '7aebf1a79bc40cbc8774ee7b3a56fd23e51f542d',
+            'reference' => '3e04f9518e0884e0d87c8c706726d9a974c7a82a',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
