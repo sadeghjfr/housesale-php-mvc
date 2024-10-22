@@ -7,8 +7,8 @@ trait HasAttributes {
     private function registerAttribute($object, $attribute, $value){
 
         $this->inCastsAttributes($attribute)
-            ? $object->attribute = $this->castDecodeValue($attribute, $value)
-            : $object->attribute = $value;
+            ? $object->$attribute = $this->castDecodeValue($attribute, $value)
+            : $object->$attribute = $value;
     }
 
     protected function arrayToAttributes(array $array, $object = null){

@@ -66,7 +66,7 @@ trait HasCRUD{
         return null;
     }
 
-    protected function wereMethod($attribute, $firstValue, $secondValue = null){
+    protected function whereMethod($attribute, $firstValue, $secondValue = null){
 
         if ($secondValue === null){
 
@@ -190,10 +190,10 @@ trait HasCRUD{
                     $array[$key] = $this->getAttributeName($field);
                 }
 
-                $field = implode(" , ", $array);
+                $fields = implode(" , ", $array);
             }
 
-            $this->setSql("SELECT $field FROM " . $this->getTableName());
+            $this->setSql("SELECT $fields FROM " . $this->getTableName());
         }
 
         $statement = $this->executeQuery();
