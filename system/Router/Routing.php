@@ -3,6 +3,7 @@
 namespace System\Router;
 
 use ReflectionMethod;
+use System\Config\Config;
 
 class Routing{
 
@@ -13,7 +14,7 @@ class Routing{
 
     public function __construct(){
 
-        $this->current_route = explode("/", CURRENT_ROUTE);
+        $this->current_route = explode("/", Config::get('app.CURRENT_ROUTE'));
         $this->method_field = $this->methodField();
         global $routes;
         $this->routes = $routes;
