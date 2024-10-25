@@ -61,10 +61,10 @@ trait HasSoftDelete{
 
     protected function getMethod($array = []){
 
-        if ($this->sql == ''){
+        if ($this->getSql() == ''){
 
             if (empty($array))
-                $fields = $this->getTableName() . ".*";
+                $field = $this->getTableName() . ".*";
 
             else{
 
@@ -104,7 +104,7 @@ trait HasSoftDelete{
         $currentRow = ($currentPage-1) * $perPage;
         $this->setLimit($currentRow, $perPage);
 
-        if ($this->sql == '')
+        if ($this->getSql() == '')
             $this->setSql("SELECT " . $this->getTableName() . ".* FROM " . $this->getTableName());
 
         $statement = $this->executeQuery();

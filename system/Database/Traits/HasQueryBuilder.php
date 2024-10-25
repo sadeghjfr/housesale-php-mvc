@@ -18,7 +18,7 @@ trait HasQueryBuilder{
         $this->sql = $query;
     }
 
-    protected function getSql(){
+    protected function getSql(): string {
 
         return $this->sql;
     }
@@ -113,15 +113,6 @@ trait HasQueryBuilder{
         //echo $query."<hr/>";
         $pdoInstance = DBConnection::getDBConnectionInstance();
         $statement = $pdoInstance->prepare($query);
-
-        /*if (sizeof($this->bindValues) > sizeof($this->values)){
-
-            sizeof($this->bindValues) > 0 ? $statement->execute($this->bindValues) : $statement->execute();
-        }
-
-        else{
-            sizeof($this->values) > 0 ? $statement->execute(array_values($this->values)) : $statement->execute();
-        }*/
 
         sizeof($this->bindValues) > 0 ? $statement->execute($this->bindValues) : $statement->execute();
 

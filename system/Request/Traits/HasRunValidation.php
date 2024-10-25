@@ -14,12 +14,15 @@ trait HasRunValidation{
 
     private function checkFirstError($name): bool {
 
-        if (!errorExist($name) && !in_array($name, $this->errorVariablesName))
+        if (!errorExists($name) && !in_array($name, $this->errorVariablesName))
             return true;
 
         return false;
     }
 
+    private function checkFieldExist($name): bool {
+        return isset($this->request[$name]) && !empty($this->request[$name]);
+    }
 
     private function checkFileExist($name): bool {
 

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 class HomeController extends Controller
 {
 
-   /* public function index(){
+    public function index(){
         echo "index method in HomeController";
     }
 
@@ -23,6 +23,6 @@ class HomeController extends Controller
     }
     public function destroy($id){
         echo "destroy method in HomeController";
-    }*/
+    }
 
 }

@@ -89,7 +89,7 @@ trait HasCRUD{
         return $this;
     }
 
-    protected function wereOrMethod($attribute, $firstValue, $secondValue = null){
+    protected function whereOrMethod($attribute, $firstValue, $secondValue = null){
 
         if ($secondValue === null){
 
@@ -112,7 +112,7 @@ trait HasCRUD{
         return $this;
     }
 
-    protected function wereNullMethod($attribute){
+    protected function whereNullMethod($attribute){
 
         $condition = $this->getAttributeName($attribute) . ' IS NULL ';
 
@@ -125,7 +125,7 @@ trait HasCRUD{
         return $this;
     }
 
-    protected function wereNotNullMethod($attribute){
+    protected function whereNotNullMethod($attribute){
 
         $condition = $this->getAttributeName($attribute) . ' IS NOT NULL ';
 
@@ -281,12 +281,15 @@ trait HasCRUD{
 
         foreach ($this->fillable as $attribute){
 
-            if (isset($this->attribute)){
+            if (isset($this->$attribute)){
 
-                array_push($fillArray, $this->getAttributeName($attribute)) . " = ?";
+                if ($this->$attribute === '')
+                    $this->$attribute = null;
+
+                $fillArray[] = $this->getAttributeName($attribute) . " = ?";
                 $this->inCastsAttributes($attribute)
-                    ? $this->addValue($attribute, $this->castEncodeValue($attribute, $this->attribute))
-                    : $this->addValue($attribute, $this->attribute);
+                    ? $this->addValue($attribute, $this->castEncodeValue($attribute, $this->$attribute))
+                    : $this->addValue($attribute, $this->$attribute);
             }
 
         }
