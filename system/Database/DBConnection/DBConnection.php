@@ -3,6 +3,7 @@
 namespace System\Database\DBConnection;
 use PDO;
 use PDOException;
+use System\Config\Config;
 
 class DBConnection{
 
@@ -34,9 +35,9 @@ class DBConnection{
         try {
 
             return new PDO(
-                "mysql:host=".DB_HOST.";dbname=".DB_NAME,
-                DB_USERNAME,
-                DB_PASSWORD,
+                "mysql:host=".Config::get('database.DB_HOST').";dbname=".Config::get('database.DB_NAME'),
+                Config::get('database.DB_USERNAME'),
+               Config::get('database.DB_PASSWORD'),
                 $options
             );
         }

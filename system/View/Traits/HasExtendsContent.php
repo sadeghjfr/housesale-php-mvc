@@ -49,7 +49,8 @@ trait HasExtendsContent{
     private function initialYields($yieldName){
 
         $string = $this->content;
-        $startWord = "@section('$yieldName')";
+        $startWord = "@section('" . $yieldName . "')";
+
         $endWord = "@endsection";
 
         $startPos = strpos($string, $startWord);
@@ -61,8 +62,9 @@ trait HasExtendsContent{
                     str_replace("@yield('$yieldName')", "", $this->extendsContent);
         }
 
-        $startPos = strlen($startWord);
+        $startPos += strlen($startWord);
         $endPos = strpos($string, $endWord, $startPos);
+
 
         if ($endPos === false){
 

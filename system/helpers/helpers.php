@@ -160,7 +160,7 @@ function route($name, $params = []): string
     $params = array_reverse($params);
     $routeParamsMatch = [];
     preg_match_all("/{[^}.]*}/", $route, $routeParamsMatch);
-    if(count($routeParamsMatch[0] > count($params)))
+    if(count($routeParamsMatch[0]) > count($params))
     {
         throw new Exception('route params not enough!!');
     }

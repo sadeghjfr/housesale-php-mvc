@@ -29,7 +29,7 @@ class Routing{
 
 
         $classPath = str_replace('\\', '/', $match["class"]);
-        $path = BASE_DIR . "/app/Http/Controllers/".$classPath.".php";
+        $path = Config::get('app.BASE_DIR') . "/app/Http/Controllers/".$classPath.".php";
         if(!file_exists($path)){
             $this->error404();
         }
@@ -55,7 +55,7 @@ class Routing{
 
     }
 
-    public function match(){
+    public function match(): array {
 
         $reservedRoutes = $this->routes[$this->method_field];
 

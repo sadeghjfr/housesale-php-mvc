@@ -1,6 +1,7 @@
 <?php
 
 namespace System\Database\DBBuilder;
+use System\Config\Config;
 use System\Database\DBConnection\DBConnection;
 
 class DBBuilder{
@@ -14,7 +15,7 @@ class DBBuilder{
     private function getMigrations(): array {
 
         $oldMigrationsArray = $this->getOldMigration();
-        $migrationsDirectory = BASE_DIR . DIRECTORY_SEPARATOR .
+        $migrationsDirectory = Config::get('app.BASE_DIR') . DIRECTORY_SEPARATOR .
             "database" . DIRECTORY_SEPARATOR . "migrations" . DIRECTORY_SEPARATOR;
 
         $allMigrationsArray = glob($migrationsDirectory, "*.php");

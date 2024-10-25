@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Ads;
 use App\Role;
 use App\Category;
 use App\Post;
