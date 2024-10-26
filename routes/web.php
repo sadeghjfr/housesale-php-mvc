@@ -28,3 +28,15 @@ Route::get('/admin/post/edit/{id}', 'Admin\PostController@edit', 'admin.post.edi
 Route::put('/admin/post/update/{id}', 'Admin\PostController@update', 'admin.post.update');
 Route::put('/admin/post/status/{id}', 'Admin\PostController@status', 'admin.post.status');
 Route::delete('/admin/post/delete/{id}', 'Admin\PostController@destroy', 'admin.post.delete');
+
+// admin - ads
+Route::get('/admin/ads', 'Admin\AdsController@index', 'admin.ads.index');
+Route::get('/admin/ads/create', 'Admin\AdsController@create', 'admin.ads.create');
+Route::post('/admin/ads/store', 'Admin\AdsController@store', 'admin.ads.store');
+Route::get('/admin/ads/edit/{id}', 'Admin\AdsController@edit', 'admin.ads.edit');
+Route::put('/admin/ads/update/{id}', 'Admin\AdsController@update', 'admin.ads.update');
+Route::delete('/admin/ads/delete/{id}', 'Admin\AdsController@destroy', 'admin.ads.delete');
+
+Route::get('/admin/ads/gallery/{id}', 'Admin\AdsController@gallery', 'admin.ads.gallery');
+Route::post('/admin/ads/store-gallery-image/{id}', 'Admin\AdsController@storeGalleryImage', 'admin.ads.store.gallery.image');
+Route::get('/admin/ads/delete-gallery-image/{gallery_id}', 'Admin\AdsController@deleteGalleryImage', 'admin.ads.delete.gallery.image');
