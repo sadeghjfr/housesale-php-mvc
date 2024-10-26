@@ -45,7 +45,7 @@ class CategoryController extends AdminController {
     }
     public function destroy($id){
 
-        $category = Category::delete($id);
+        Category::delete($id);
         back();
     }
 
