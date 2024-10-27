@@ -11,10 +11,10 @@ class RegisterRequest extends Request
     {
         return [
             'email' => "required|max:64|email|unique:users,email",
-            'password' => "required|min:8|confirmed",
+            'password' => "required|min:4|confirmed",
             'first_name' => "required",
             'last_name' => "required",
-            'avatar' => "required|file|mimes:jpeg,jpg,png|max:2048",
+            'avatar' => "required|file|mimes:jpeg,jpg,png|max:2048"
         ];
     }
 }

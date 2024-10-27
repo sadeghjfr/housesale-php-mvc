@@ -70,7 +70,7 @@
                                                         </div>
                                                     </fieldset>
                                                 </div>
-                                                <div class="text-right"><a href="" class="card-link">رمز خود را فراموش کرده ام؟</a></div>
+                                                <div class="text-right"><a href="<?= route('auth.forgot.view') ?>" class="card-link">رمز خود را فراموش کرده ام؟</a></div>
                                             </div>
                                             <a href="<?= route('auth.register.view') ?>" class="btn btn-outline-primary float-left btn-inline">ثبت نام</a>
                                             <button type="submit" class="btn btn-primary float-right btn-inline">ورود</button>

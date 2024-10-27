@@ -68,3 +68,9 @@ Route::get('/activation/{token}', 'Auth\RegisterController@activation', 'auth.ac
 
 Route::get('/login', 'Auth\LoginController@view', 'auth.login.view');
 Route::post('/login', 'Auth\LoginController@login', 'auth.login');
+
+Route::get('/forgot', 'Auth\ForgotController@view', 'auth.forgot.view');
+Route::post('/forgot', 'Auth\ForgotController@forgot', 'auth.forgot');
+
+Route::get('/reset-password/{$token}', 'Auth\ResetPasswordController@view', 'auth.reset-password.view');
+Route::post('/reset-password/{$token}', 'Auth\ResetPasswordController@resetPassword', 'auth.reset-password');
