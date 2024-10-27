@@ -81,9 +81,15 @@ function error($name, $message = null)
     }
 }
 
-function errorExists($name): bool
+function errorExists($name = null)
 {
-    return isset($_SESSION["temporary_errorFlash"][$name]) === true ? true : false;
+    if($name === null)
+    {
+        return isset($_SESSION['temporary_errorFlash']) === true ? count($_SESSION['temporary_errorFlash']) : false;
+    }
+    else{
+        return isset($_SESSION['temporary_errorFlash'][$name]) === true ? true : false;
+    }
 }
 
 function allErrors()

@@ -14,9 +14,4 @@ class User extends Model {
 
     protected $deletedAt = 'deleted_at';
 
-    public function roles(){
-        return $this->belongsToMany('\App\Role', 'user_role', 'id', 'user_id', 'role_id', 'id');
-    }
-
-
 }

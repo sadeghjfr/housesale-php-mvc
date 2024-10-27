@@ -60,3 +60,11 @@ Route::get('/admin/user', 'Admin\UserController@index', 'admin.user.index');
 Route::get('/admin/user/edit/{id}', 'Admin\UserController@edit', 'admin.user.edit');
 Route::put('/admin/user/update/{id}', 'Admin\UserController@update', 'admin.user.update');
 Route::get('/admin/user/status/{id}', 'Admin\UserController@status', 'admin.user.status');
+
+// auth
+Route::get('/register', 'Auth\RegisterController@view', 'auth.register.view');
+Route::post('/register', 'Auth\RegisterController@register', 'auth.register');
+Route::get('/activation/{token}', 'Auth\RegisterController@activation', 'auth.activation');
+
+//Route::get('/login', 'Auth\LoginController@view', 'auth.login.view');
+//Route::post('/login', 'Auth\LoginController@login', 'auth.login');

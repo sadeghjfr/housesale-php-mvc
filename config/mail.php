@@ -2,16 +2,14 @@
 
 return [
     'SMTP' => [
-        'Host'       => 'smtp.mailtrap.io',
+        'Host'       => 'smtp.gmail.com',
         'SMTPAuth'   => true,
-        'Username'   => '33',
-        'Password'   => '22',
+        'Username'   => 'sadeghjfr22@gmail.com',
+        'Password'   => 'rvyq pmos xapp boia',
         'Port'       => 587,
         'setFrom'    => [
-            'mail'  =>  'support@amlak.com',
-            'name'  =>  'test'
+            'mail'  =>  'sadeghjfr22@gmail.com',
+            'name'  =>  'SADEGH JAFARI'
         ]
     ]
 ];
-
-//Config::get('mail.SMTP.setFrom.mail')
