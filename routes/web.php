@@ -48,3 +48,9 @@ Route::post('/admin/slide/store', 'Admin\SlideController@store', 'admin.slide.st
 Route::get('/admin/slide/edit/{id}', 'Admin\SlideController@edit', 'admin.slide.edit');
 Route::put('/admin/slide/update/{id}', 'Admin\SlideController@update', 'admin.slide.update');
 Route::delete('/admin/slide/delete/{id}', 'Admin\SlideController@destroy', 'admin.slide.delete');
+
+// admin - comment
+Route::get('/admin/comment', 'Admin\CommentController@index', 'admin.comment.index');
+Route::get('/admin/comment/show/{id}', 'Admin\CommentController@show', 'admin.comment.show');
+Route::get('/admin/comment/approved/{id}', 'Admin\CommentController@approved', 'admin.comment.approved');
+Route::post('/admin/comment/answer/{id}', 'Admin\CommentController@answer', 'admin.comment.answer');
