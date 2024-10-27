@@ -54,3 +54,9 @@ Route::get('/admin/comment', 'Admin\CommentController@index', 'admin.comment.ind
 Route::get('/admin/comment/show/{id}', 'Admin\CommentController@show', 'admin.comment.show');
 Route::get('/admin/comment/approved/{id}', 'Admin\CommentController@approved', 'admin.comment.approved');
 Route::post('/admin/comment/answer/{id}', 'Admin\CommentController@answer', 'admin.comment.answer');
+
+// admin - user
+Route::get('/admin/user', 'Admin\UserController@index', 'admin.user.index');
+Route::get('/admin/user/edit/{id}', 'Admin\UserController@edit', 'admin.user.edit');
+Route::put('/admin/user/update/{id}', 'Admin\UserController@update', 'admin.user.update');
+Route::get('/admin/user/status/{id}', 'Admin\UserController@status', 'admin.user.status');
