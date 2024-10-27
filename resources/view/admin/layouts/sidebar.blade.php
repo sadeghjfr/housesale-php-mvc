@@ -20,7 +20,7 @@
             <li class=" nav-item <?= sidebarActive(route('admin.category.index')) ?>"><a href="<?= route('admin.category.index') ?>"><i class="feather icon-message-square"></i><span class="menu-title" data-i18n="Chat">دسته بندی</span></a></li>
             <li class=" nav-item <?= sidebarActive(route('admin.post.index')) ?>"><a href="<?= route('admin.post.index') ?>"><i class="feather icon-check-square"></i><span class="menu-title" data-i18n="Todo">اخبار</span></a></li>
             <li class=" nav-item <?= sidebarActive(route('admin.ads.index')) ?>"><a href="<?= route('admin.ads.index') ?>"><i class="feather icon-calendar"></i><span class="menu-title" data-i18n="Calender">آگهی</span></a></li>
-            <li class=" nav-item "><a href=""><i class="feather icon-calendar"></i><span class="menu-title" data-i18n="Calender">اسلاید شو</span></a></li>
+            <li class=" nav-item <?= sidebarActive(route('admin.slide.index')) ?>"><a href="<?= route('admin.slide.index') ?>"><i class="feather icon-calendar"></i><span class="menu-title" data-i18n="Calender">اسلاید شو</span></a></li>
             <li class=" nav-item"><a href=""><i class="feather icon-calendar"></i><span class="menu-title" data-i18n="Calender">نظرات</span></a></li>
             <li class=" nav-item"><a href=""><i class="feather icon-calendar"></i><span class="menu-title" data-i18n="Calender">کاربران</span></a></li>
 
