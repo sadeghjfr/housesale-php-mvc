@@ -124,23 +124,23 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="properties-slider owl-carousel ftco-animate">
-                        <?php foreach($newestAds as $adverise) {?>
+                        <?php foreach($newestAds as $advertise) {?>
                         <div class="item">
                             <div class="properties">
-                                <a href="#" class="img d-flex justify-content-center align-items-center" style="background-image: url('<?= asset($adverise->image) ?>');">
+                                <a href="<?= route('home.ads', [$advertise->id]) ?>" class="img d-flex justify-content-center align-items-center" style="background-image: url('<?= asset($advertise->image) ?>');">
                                     <div class="icon d-flex justify-content-center align-items-center">
                                         <span class="icon-search2"></span>
                                     </div>
                                 </a>
                                 <div class="text p-3">
-                                    <span class="status <?= $adverise->sellStatus() == 'خرید' ? 'sale' : 'rent' ?>"><?= $adverise->sellStatus() ?></span>
+                                    <span class="status <?= $advertise->sellStatus() == 'خرید' ? 'sale' : 'rent' ?>"><?= $advertise->sellStatus() ?></span>
                                     <div class="d-flex">
                                         <div class="one">
-                                            <h3><a href="#"><?= $adverise->title ?></a></h3>
-                                            <p><?= $adverise->type() ?></p>
+                                            <h3><a href="<?= route('home.ads', [$advertise->id]) ?>"><?= $advertise->title ?></a></h3>
+                                            <p><?= $advertise->type() ?></p>
                                         </div>
                                         <div class="two">
-                                            <span class="price"><?= $adverise->amount ?></span>
+                                            <span class="price"><?= $advertise->amount ?></span>
                                         </div>
                                     </div>
                                 </div>
@@ -167,7 +167,7 @@
                 <?php foreach($bestAds as $advertise) { ?>
                 <div class="col-sm col-md-6 col-lg ftco-animate">
                     <div class="properties">
-                        <a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url('<?= asset($advertise->image) ?>');">
+                        <a href="<?= route('home.ads', [$advertise->id]) ?>" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url('<?= asset($advertise->image) ?>');">
                             <div class="icon d-flex justify-content-center align-items-center">
                                 <span class="icon-search2"></span>
                             </div>
@@ -176,7 +176,7 @@
                             <span class="status sale">خرید</span>
                             <div class="d-flex">
                                 <div class="one">
-                                    <h3><a href="#"><?= $advertise->title ?></a></h3>
+                                    <h3><a href="<?= route('home.ads', [$advertise->id]) ?>"><?= $advertise->title ?></a></h3>
                                     <p>ویلایی</p>
                                 </div>
                                 <div class="two">

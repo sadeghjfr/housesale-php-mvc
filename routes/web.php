@@ -5,6 +5,8 @@ use System\Router\Web\Route;
 Route::get('/home', 'HomeController@index', 'home');
 Route::get('/', 'HomeController@index', 'home.index');
 Route::get('/about', 'HomeController@about', 'home.about');
+Route::get('/ads', 'HomeController@allAds', 'home.all.ads');
+Route::get('/ads/{id}', 'HomeController@ads', 'home.ads');
 
 
 // admin
