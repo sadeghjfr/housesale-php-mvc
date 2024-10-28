@@ -2,27 +2,21 @@
 
 namespace App\Http\Controllers;
 
-class HomeController extends Controller
-{
+use App\Ads;
+use App\Post;
+use App\Slide;
+
+class HomeController extends Controller {
 
     public function index(){
-        echo "index method in HomeController";
+
+        $slides = Slide::all();
+        $newestAds = Ads::orderBy('created_at', 'desc')->limit(0,6)->get();
+        $bestAds = Ads::orderBy('created_at', 'desc')->orderBy('view', 'desc')->limit(0,4)->get();
+        $posts = Post::where('published_at', '<=', date('Y-m-d H:i:s'))->orderBy('created_at', 'desc')->limit(0,4)->get();
+
+        return view('app.index', compact('slides', 'newestAds', 'bestAds', 'posts'));
     }
 
-    public function create(){
-        echo "create method in HomeController";
-    }
-    public function store(){
-        echo "store method in HomeController";
-    }
-    public function edit($id){
-        echo "edit method in HomeController";
-    }
-    public function update($id){
-        echo "update method in HomeController";
-    }
-    public function destroy($id){
-        echo "destroy method in HomeController";
-    }
 
 }
