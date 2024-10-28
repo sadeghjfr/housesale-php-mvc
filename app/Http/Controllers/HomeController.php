@@ -18,5 +18,10 @@ class HomeController extends Controller {
         return view('app.index', compact('slides', 'newestAds', 'bestAds', 'posts'));
     }
 
+    public function about(){
+
+        return view('app.about');
+    }
+
 
 }

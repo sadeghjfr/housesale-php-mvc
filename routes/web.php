@@ -2,8 +2,9 @@
 
 use System\Router\Web\Route;
 
-Route::get('/', 'HomeController@index', 'home.index');
 Route::get('/home', 'HomeController@index', 'home');
+Route::get('/', 'HomeController@index', 'home.index');
+Route::get('/about', 'HomeController@about', 'home.about');
 
 
 // admin
