@@ -41,5 +41,18 @@ class HomeController extends Controller {
         return view('app.all-ads', compact('ads'));
     }
 
+    public function allPosts(){
+
+        $posts = Post::all();
+        return view('app.all-posts', compact('posts'));
+    }
+
+    public function post($id) {
+
+        $post = Post::find($id);
+        $posts = Post::where('published_at', '<=', date('Y-m-d H:i:s'))->orderBy('created_at', 'desc')->limit(0,4)->get();
+        $categories = Category::all();
+        return view('app.post', compact('posts', 'post','categories'));
+    }
 
 }
