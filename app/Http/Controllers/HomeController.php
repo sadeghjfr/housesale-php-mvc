@@ -72,4 +72,12 @@ class HomeController extends Controller {
         back();
     }
 
+    public function category($id)
+    {
+        $category = Category::find($id);
+        $ads = $category->ads()->get();
+        $posts = $category->posts()->get();
+        return view('app.category', compact('posts', 'category', 'ads'));
+    }
+
 }

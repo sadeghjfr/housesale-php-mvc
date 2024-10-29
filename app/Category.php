@@ -21,4 +21,9 @@ class Category extends Model {
 
         return $this->hasMany('\App\Ads', 'cat_id', 'id');
     }
+
+    public function posts()
+    {
+        return $this->hasMany('\App\Post', 'cat_id', 'id');
+    }
 }

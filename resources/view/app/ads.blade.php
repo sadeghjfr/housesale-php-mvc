@@ -108,7 +108,7 @@
                     <div class="categories">
                         <h3>دسته بندی ها</h3>
                         <?php foreach($categories as $category) { ?>
-                        <li><a href="#"><?= $category->name ?> <span><?= count($category->ads()->get()) ?></span></a></li>
+                        <li><a href="<?= route('home.category', [$category->id]) ?>"><?= $category->name ?> <span><?= count($category->ads()->get()) ?></span></a></li>
                         <?php } ?>
                     </div>
                 </div>

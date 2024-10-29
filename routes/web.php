@@ -10,6 +10,7 @@ Route::get('/post/{id}', 'HomeController@post', 'home.post');
 Route::post('/post/comment/{id}', 'HomeController@comment', 'home.post.comment');
 Route::get('/ads', 'HomeController@allAds', 'home.all.ads');
 Route::get('/ads/{id}', 'HomeController@ads', 'home.ads');
+Route::get('/category/{id}', 'HomeController@category', 'home.category');
 
 // admin
 Route::get('/admin', 'Admin\AdminController@index', 'admin.index');
