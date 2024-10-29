@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Ads;
 use App\Category;
+use App\Comment;
+use App\Http\Requests\UserCommentRequest;
 use App\Post;
 use App\Slide;
+use System\Auth\Auth;
 
 class HomeController extends Controller {
 
@@ -52,7 +55,21 @@ class HomeController extends Controller {
         $post = Post::find($id);
         $posts = Post::where('published_at', '<=', date('Y-m-d H:i:s'))->orderBy('created_at', 'desc')->limit(0,4)->get();
         $categories = Category::all();
-        return view('app.post', compact('posts', 'post','categories'));
+        $comments = Comment::where('approved', 1)->whereNull('parent_id')->where('post_id', $id)->get();
+        return view('app.post', compact('posts', 'post','categories','comments'));
+
+    }
+
+    public function comment($post_id) {
+
+        $request = new UserCommentRequest();
+        $inputs = $request->all();
+        $inputs['post_id'] = $post_id;
+        $inputs['approved'] = 0;
+        $inputs['status'] = 0;
+        $inputs['user_id'] = Auth::user()->id;
+        Comment::create($inputs);
+        back();
     }
 
 }

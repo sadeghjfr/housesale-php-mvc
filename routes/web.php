@@ -7,9 +7,9 @@ Route::get('/', 'HomeController@index', 'home.index');
 Route::get('/about', 'HomeController@about', 'home.about');
 Route::get('/posts', 'HomeController@allPosts', 'home.all.posts');
 Route::get('/post/{id}', 'HomeController@post', 'home.post');
+Route::post('/post/comment/{id}', 'HomeController@comment', 'home.post.comment');
 Route::get('/ads', 'HomeController@allAds', 'home.all.ads');
 Route::get('/ads/{id}', 'HomeController@ads', 'home.ads');
-
 
 // admin
 Route::get('/admin', 'Admin\AdminController@index', 'admin.index');
